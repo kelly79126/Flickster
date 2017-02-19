@@ -19,24 +19,49 @@ public class Movie {
         return String.format("https://image.tmdb.org/t/p/w780/%s",backdropPath);
     }
 
-    public String getOriginalTitle() {
-        return originalTitle;
+    public String getTitle() {
+        return title;
     }
 
     public String getOverview() {
         return overview;
     }
 
+    public String getReleaseDate() {
+        return releaseDate;
+    }
+
+    public String getOriginalLanguage() {
+        return originalLanguage;
+    }
+
+    public String getPopularity() {
+        return popularity;
+    }
+
+    public String getVoteAverage() {
+        return voteAverage;
+    }
+
     String posterPath;
     String backdropPath;
-    String originalTitle;
+    String title;
     String overview;
+    String releaseDate;
+    String originalLanguage;
+    String popularity;
+    String voteAverage;
+
 
     public Movie(JSONObject jsonObject) throws JSONException{
         this.posterPath = jsonObject.getString("poster_path");
         this.backdropPath = jsonObject.getString("backdrop_path");
-        this.originalTitle = jsonObject.getString("original_title");
+        this.title = jsonObject.getString("title");
         this.overview = jsonObject.getString("overview");
+        this.releaseDate = jsonObject.getString("release_date");
+        this.originalLanguage = jsonObject.getString("original_language");
+        this.popularity = jsonObject.getString("popularity");
+        this.voteAverage = jsonObject.getString("vote_average");
     }
 
     public static ArrayList<Movie> fromJSONArray(JSONArray array) {

@@ -70,7 +70,7 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie>{
             Picasso.with(getContext()).load(movie.getBackdropPath()).fit().transform(new RoundedCornersTransformation(15, 15)).placeholder(R.drawable.placeholderland).into(viewHolder.poster);
         }
 
-        viewHolder.title.setText(movie.getOriginalTitle());
+        viewHolder.title.setText(movie.getTitle());
         viewHolder.overview.setText(movie.getOverview());
 
         return convertView;
